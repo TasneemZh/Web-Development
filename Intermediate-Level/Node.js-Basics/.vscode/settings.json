@@ -1,0 +1,19 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "eslint.format.enable": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.run": "onSave",
+    "eslint.lintTask.enable": true,
+    "files.eol": "\r\n",
+    "explorer.confirmDelete": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "eslint.debug": true,
+    "eslint.options": {
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": ["javascript"]
+}

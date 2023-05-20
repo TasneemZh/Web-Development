@@ -1,0 +1,11 @@
+# NPM Packages
+node_modules/
+
+# Log file for NPM Dev/Dependencies
+package-lock.json
+
+# Just another file - Can be used for testing with any content
+public/test.xml
+
+# Confidential data
+.env

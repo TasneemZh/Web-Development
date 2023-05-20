@@ -1,0 +1,92 @@
+<%- include('./partials/header') %>
+
+<div class="container container_margin">
+  <div class="row row_margin">
+    <%for(let i = 0; i < maxDisplay; i++) {%>
+    <div class="col s3 col_border">
+      <p class="pokemon_number"><%=pokemonDetails[i].id%></p>
+
+      <!-- Pokemon Image -->
+      <a class="waves-effect waves-light modal-trigger" href="#<%=pokemonDetails[i].id%>">
+        <img src="<%=pokemonImages[i]%>" alt="Pokemon thumbnail">
+      </a>
+
+      <!-- Modal Form -->
+      <div id="<%=pokemonDetails[i].id%>" class="modal">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat close_btn">
+          <i class="large material-icons">close</i>
+        </a>
+        <div class="modal-content modal_margin">
+          <img src="<%=pokemonIcons[i]%>" alt="Pokemon icon">
+          <h5><%=pokemonDetails[i].name%></h5>
+
+          <hr class="modal_line">
+          <h6>Type(s)</h6>
+          <button type="button" name="button" class="btn_1"><%=pokemonDetails[i].types[0].type.name%></button>
+          <%if (pokemonDetails[i].types.length > 1) {%>
+          <button type="button" name="button" class="btn_1 btn_2"><%=pokemonDetails[i].types[1].type.name%></button>
+          <%}%>
+
+    <hr class="modal_line">
+
+    <h6>Stats</h6>
+    <%for(let j=0; j<6; j++) {%>
+          <div class="row">
+            <div class="col s2">
+              <label for="<%=pokemonDetails[i].stats[j].stat.name%>" class="stats_label"><%=pokemonDetails[i].stats[j].stat.name%>:</label>
+            </div>
+            <div class="col s10 pipeline_container">
+              <div id="<%=pokemonDetails[i].stats[j].stat.name%>" class="pipeline_shape"></div>
+              <div class="pipeline_shape pipeline_fill" style="width: <%=pokemonDetails[i].stats[j].base_stat%>%;">
+                <%=pokemonDetails[i].stats[j].base_stat%>%
+              </div>
+            </div>
+          </div>
+          <%}%>
+
+    <hr class="modal_line">
+    <h6>Moves</h6>
+        <ul>
+          <div class="row">
+        <%pokemonDetails[i].moves.forEach((element, index) => {%>
+          <div class="col s3">
+            <li class="left-align">●&nbsp;&nbsp;&nbsp;<%=element.move.name%></li>
+          </div>
+          <%});%>
+        </div>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Complement of Pokemon Details  -->
+    <h5 class="pokemon_name"><%=pokemonDetails[i].name[0].toUpperCase() + pokemonDetails[i].name.substring(1, pokemonDetails[i].name.length)%></h5>
+    <%let count = 0;%>
+    <p class="pokemon_type">
+      <%pokemonDetails[i].types.forEach(oneType => {%>
+      <%if (pokemonDetails[i].types.length > 1 && count === 0) {%>
+      <%=oneType.type.name[0].toUpperCase() + oneType.type.name.substring(1, oneType.type.name.length)%>,
+      <%count = count + 1;%>
+      <%} else {%>
+      <%=oneType.type.name[0].toUpperCase() + oneType.type.name.substring(1, oneType.type.name.length)%>
+      <%}%>
+    <%});%>
+    </p>
+
+    <!-- Switch -->
+    <form action="/checked" method="POST">
+      <input type="hidden" name="hiddenInput" value="<%=pokemonDetails[i].id%>">
+      <div class="switch switch_margin">
+        <label class="checkbox_text">
+          <input type="checkbox" name="check" id="<%=pokemonDetails[i].id%>" value="<%=pokemonDetails[i].id%>" onchange="this.form.submit()" <%=checkResults[i]%>>
+          <span class="lever"></span>
+          Captured
+        </label>
+    </form>
+
+
+  </div>
+</div>
+<%}%>
+</div>
+</div>
+<%- include('./partials/footer') -%>

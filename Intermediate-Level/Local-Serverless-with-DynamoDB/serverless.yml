@@ -1,0 +1,141 @@
+org: tasneemzh
+app: serverless-template
+service: serverless-template
+
+provider:
+# The following should stay as it is unless specific customisations are required
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  stackTags:
+    resource_owner: #Use your Bitbucket Name here
+    business_unit: RD:Development
+    managed_by: sls
+
+functions:
+  exampleFunction:
+    handler: src/mochaFunctions/exampleFunction.exampleFunction
+
+  helloWorld:
+    events:
+      - http:
+          path: /
+          method: get
+    tags:
+      infrastructure_tier: Lambda
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - resource:action
+        Resource: '*'
+    handler: src/helloWorld.handler
+    
+  createTable:
+    events:
+      - http:
+          path: /create-table
+          method: get
+    tags:
+      infrastructure_tier: Lambda
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - resource:action
+        Resource: '*'
+    handler: src/tableFunctions/createTable.handler
+
+  addFile:
+    events:
+      - http:
+          path: /add-file
+          method: get
+    tags:
+      infrastructure_tier: Lambda
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - resource:action
+        Resource: '*'
+    handler: src/tableFunctions/addFile.handler
+    
+  addUserInput:
+    events:
+      - http:
+          path: /add-input
+          method: post
+    tags:
+      infrastructure_tier: Lambda
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - resource:action
+        Resource: '*'
+    handler: src/tableFunctions/addUserInput.handler
+
+  updateItem:
+    events:
+      - http:
+          path: /update-item
+          method: put
+    tags:
+      infrastructure_tier: Lambda
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - resource:action
+        Resource: '*'
+    handler: src/tableFunctions/updateItem.handler
+
+  deleteTable:
+    events:
+      - http:
+          path: /delete-table
+          method: delete
+    tags:
+      infrastructure_tier: Lambda
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - resource:action
+        Resource: '*'
+    handler: src/tableFunctions/deleteTable.handler
+
+  awsPermissions:
+    tags:
+      infrastructure_tier: Lambda
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - resource:action
+        Resource: '*'
+    handler: src/authentication/awsPermissions.awsPermissions
+
+package:
+  individually: true
+  excludeDevDependencies: true
+
+plugins:
+  - serverless-webpack
+  - serverless-tag-api-gateway
+  - serverless-iam-roles-per-function
+  - serverless-pseudo-parameters
+  - serverless-mocha-plugin
+  - serverless-dynamodb-local
+  - serverless-offline
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true # enable auto-packing of external modules
+    packager: npm
+  serverless-mocha-plugin:
+    testTemplate: templates/testTemplate.ejs
+    functionTemplate: templates/functionTemplate.ejs
+  apiGatewayTags:
+    resource_owner: #Use Bitbucket username
+    business_unit: RD:Development
+    managed_by: sls
+    infrastructure_tier: APIGateway
+  dynamodb:
+    stages:
+      - dev

@@ -1,0 +1,151 @@
+* {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Header EJS - NavBar */
+.app_name {
+  position: absolute;
+  left: 0;
+  margin-left: 1rem;
+}
+
+.search_bar {
+  width: 30rem;
+}
+
+/* Home EJS */
+.container_margin {
+  margin: 3rem auto 1.3rem;
+}
+
+.row_margin {
+  margin: 0 auto;
+}
+
+.col_border {
+  border: 0.5rem solid #66c2ff;
+}
+
+/* Home EJS - Pokemon ID */
+.pokemon_number {
+  color: grey;
+  font-size: 0.8rem;
+}
+
+/* Modal Popup - Close Sign */
+.close_btn {
+  margin-right: 50rem;
+  color: lightGrey;
+  width: 5%;
+}
+
+/* Modal Popup - Icon Margins */
+.modal_margin {
+  padding-top: 0;
+}
+
+/* Modal Popup - Line Breakers */
+.modal_line {
+  border: hidden;
+  border-bottom: 2px solid lightGrey;
+}
+
+/* Modal Popup - Types Buttons */
+.btn_1 {
+  border-radius: 1rem;
+  background-color: #fff;
+  border: 2px solid lightGreen;
+  color: lightGreen;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.btn_2 {
+  border: 2px solid #993399;
+  color: #993399;
+}
+
+/* Modal Popup - Stats */
+.stats_label {
+  font-size: 1.5rem;
+  color: #262626;
+}
+
+/* Modal Popup - Stats Pipelines */
+.pipeline_container {
+  display: grid;
+}
+
+.pipeline_shape {
+  grid-column: 1;
+  grid-row: 1;
+  border-radius: 3rem;
+  background: grey;
+  width: 100%;
+  height: 1rem;
+  z-index: -1;
+}
+
+.pipeline_fill {
+  background: #347deb;
+  z-index: 1;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+/* Home EJS - Pokemon Name */
+.pokemon_name {
+  margin-bottom: 0;
+}
+
+/* Home EJS - Pokemon Types */
+.pokemon_type {
+  color: grey;
+  margin-top: 2.5px;
+}
+
+/* Home EJS - Switch */
+.switch label input[type=checkbox]:checked+.lever {
+  background-color: #b3b3ff;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color: #0000b3;
+}
+
+.switch_margin {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.checkbox_text {
+  font-size: 1rem;
+  color: black;
+}
+
+/* Footer Section */
+.footer_text {
+  margin-bottom: 1rem;
+}
+
+.footer_position {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Notfound EJS */
+.sorry_msg {
+  margin-left: 1rem;
+}
