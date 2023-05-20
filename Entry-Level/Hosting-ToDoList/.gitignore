@@ -1,0 +1,12 @@
+# What should be ignored base on Heruko instructions
+
+# A folder where Node packages reside - No need to use `npm i` to install what
+# ...is required since heroku will take care of it. However, if you want to use
+# ...the project locally since the command becomes a MUST
+node_modules/
+
+# A log file for documenting what happens in debugging when that occurs
+npm-debug.log
+
+# A file for storing secret keys
+*.env

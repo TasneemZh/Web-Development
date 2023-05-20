@@ -1,0 +1,11 @@
+# A folder where Node packages reside - No need to use `npm i` to install what
+# ...is required since heroku will take care of it. However, if you want to use
+# ...the project locally since the command becomes a MUST
+node_modules/
+
+# Confidential information regarding configuration
+# DON'T COMMENT OUT THE ENVIROMENT VARIABLES SINCE HEROKU WON'T FIND THEM THAT WAY
+.env
+
+# NPM packages history
+package-lock.json

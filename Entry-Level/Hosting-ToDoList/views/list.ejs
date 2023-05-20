@@ -1,0 +1,23 @@
+    <%- include("header"); -%>
+
+    <div class="box" id="heading">
+      <h1><%=ejsList%></h1>
+    </div>
+    <div class="box">
+
+      <form action="/delete" method="post">
+        <%  ejsItems.forEach(function(ejsItem) { %>
+        <div class="item">
+          <input type="checkbox" name="checkbox" value="<%=ejsItem._id%>" onChange="this.form.submit()">
+          <p><%=ejsItem.name%></p>
+        </div>
+        <%    }); %>
+        <input type="hidden" name="listNameHidden" value="<%=ejsList%>">
+      </form>
+
+      <form class="item" action="/" method="post">
+        <input type="text" name="addItem" placeholder="Add an Item" autocomplete="off">
+        <button type="submit" name="listName" value="<%=ejsList%>">+</button>
+      </form>
+    </div>
+    <%- include("footer"); -%>

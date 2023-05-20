@@ -1,0 +1,14 @@
+{
+  "name": "calculator-and-bmi",
+  "version": "1.0.0",
+  "description": "A calculator for addition, and a bmi calculator",
+  "main": "calculator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tasneem Zahdeh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
