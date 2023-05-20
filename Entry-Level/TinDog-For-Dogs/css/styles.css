@@ -1,0 +1,196 @@
+/****************************** ELEMENTS DESIGN ******************************/
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+p {
+  color: #949188;
+  margin: 0 50px 16px;
+}
+
+/******************************* GLOBAL CLASSES *******************************/
+.colored-backgd {
+  background-color: #ff4c68;
+  color: #fff;
+}
+
+.uncolored-backgd {
+  background-color: #fff;
+  color: #000;
+}
+
+/******************************* NAVIGATION BAR *******************************/
+.container-fluid {
+  background-color: #ff4c68;
+  padding: 3% 7% 0;
+}
+
+.navbar-brand {
+  font-size: 2.5rem;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+}
+
+.nav-item {
+  font-size: 1.2rem;
+  font-weight: lighter;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.navbar {
+  padding: 0;
+}
+
+/*********************************** TITLE ***********************************/
+#title {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
+
+.title-div {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.left-aligned {
+  text-align: left;
+}
+
+.col-lg-6 img {
+  width: 40%;
+}
+
+#first-img {
+  transform: rotate(25deg);
+  margin-top: 8%;
+}
+
+.download-btn {
+  margin-right: 20px;
+}
+
+/********************************** FEATURES **********************************/
+#features {
+  margin-top: 45%;
+}
+
+.container-features {
+  padding: 10% 15%;
+  margin: 0;
+}
+
+.features-icons {
+  color: #ff9999;
+  margin-bottom: 1rem;
+}
+
+.features-icons:hover {
+  color: #ff006a;
+}
+
+/******************************** TESTIMONIALS ********************************/
+#testimonials {
+  background-color: #ff9999;
+}
+
+.carousel-item {
+  padding: 10% 15%;
+}
+
+.testimonial-text {
+  margin: 0 15% 5%;
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  margin-right: 2%;
+}
+
+/*********************************** PRESS ***********************************/
+#press {
+  background-color: #ff9999;
+  padding-bottom: 5%;
+}
+
+.press-img {
+  width: 10%;
+}
+
+/********************************** PRICING **********************************/
+#pricing {
+  padding: 10px;
+}
+
+#h2-pricing {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.pricing-sec {
+  padding-top: 80px;
+}
+
+.pricing-row {
+  padding: 70px;
+  margin: 0;
+}
+
+.free-plan:hover {
+  background-color: #343a40;
+}
+
+/**************************** CTA (CALL TO ACTION) ****************************/
+#cta {
+  padding: 100px 300px 150px;
+}
+
+#h3-cta {
+  font-size: 3rem;
+  margin-bottom: 70px;
+  line-height: 1.5;
+}
+
+/*********************************** FOOTER ***********************************/
+#footer {
+  padding: 100px 0 20px;
+}
+
+.social-media {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+/**************************** MEDIA RESPONSIVENESS ****************************/
+@media (max-width: 992px) {
+  #title {
+    z-index: 1;
+  }
+
+  .left-aligned {
+    text-align: center;
+  }
+
+  #first-img {
+    transform: rotate(0);
+    position: static;
+  }
+
+  #features {
+    z-index: 0;
+    margin-top: 120%;
+  }
+
+  .download-btn {
+    margin: 0;
+  }
+}

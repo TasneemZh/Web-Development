@@ -1,0 +1,49 @@
+/* TAGS STYLING */
+body {
+  background-color: #383838;
+}
+
+/* HEADING SECTION */
+#big_heading {
+  font-family: 'Lobster', cursive;
+  font-size: 8rem;
+  font-weight: bold;
+  margin: 30px 0 100px;
+}
+
+.blue_color {
+  color: #28c7a5;
+}
+
+/* PLAYERS SECTION */
+.font_handwriting {
+  font-family: 'Indie Flower', cursive;
+}
+
+.ply_text {
+  font-size: 2rem;
+  margin: 0 0 40px;
+}
+
+.images_edit {
+  width: 30%;
+}
+
+.ply {
+  padding: 0;
+  margin: 0;
+}
+
+.ply_1 {
+  margin-left: 470px;
+}
+
+.ply_2 {
+  margin-right: 470px;
+}
+
+/* FOOTER SECTION */
+.footer {
+  padding-top: 110px;
+  color: #fff;
+}
