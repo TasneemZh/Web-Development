@@ -80,3 +80,89 @@ const capitalizeFirstWord = (str) => {
     }
     return sentence;
 };
+
+const debounceFunction = ()=> {
+    const startDate = new Date();
+
+    const endDate = new Date().setMinutes(startDate.getMinutes() + 3);
+
+    const isAllowed = () => {
+        console.log({
+            start: new Date().getTime(),
+            end: endDate
+        })
+        if (new Date().getTime() > endDate) {
+            console.log(false);
+            return;
+        }
+        console.log(true);
+        return;
+    }
+
+    setTimeout(() => isAllowed(), 60000);
+    setTimeout(() => isAllowed(), 120000);
+    setTimeout(() => isAllowed(), 180000);
+    setTimeout(() => isAllowed(), 240000);
+    setTimeout(() => isAllowed(), 300000);
+    setTimeout(() => isAllowed(), 360000);
+};
+
+const sortBasedOnValue = (arr, key) => {
+    const sorted = arr.sort((prev, next) => prev[key] - next[key]);
+    console.log(sorted);
+};
+
+const createHardCopy = (arr, obj) => {
+    const copyArr = [...arr];
+    const copyObj = JSON.parse(JSON.stringify(obj));
+    copyArr.push(9);
+    copyArr[0] = 'changed';
+    copyObj['c'] = 'ccc';
+    console.log({
+        arr,
+        copyArr,
+        obj,
+        copyObj,
+    });
+};
+
+const recurrsiveFunction = () => {
+    const factorialNumber = (num1, num2) => {
+        return num1 * num2;
+    };
+    
+    const num = 7;
+    let result = 1;
+    
+    for (let i = num; i > 1; i -= 2) {
+        result *= factorialNumber(i, i - 1);
+    }
+    
+    console.log(result);    
+};
+
+const mergeTwoArrays = (arr1, arr2) => {
+    const merged = [];
+    let j = 0;
+    let i = 0;
+    while (j < arr2.length || i < arr1.length) {
+        if (arr1[i] < arr2[j]) {
+            merged.push(arr1[i]);
+            i += 1;
+            if (i >= arr1.length) {
+                merged.push(...arr2.slice(j))
+                break;
+            }
+        } else {
+            merged.push(arr2[j]);
+            j += 1;
+            if (j >= arr2.length) {
+                merged.push(...arr1.slice(i))
+                break;
+            }
+        }
+    }
+    console.log(merged)
+    return merged;
+};
+
