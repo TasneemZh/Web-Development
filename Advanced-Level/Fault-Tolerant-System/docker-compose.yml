@@ -1,0 +1,25 @@
+services:
+  server:
+    build: .
+    command: ['npm', 'run', 'start:server']
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+      - SERVER_DB_PATH=./data/server.db
+    volumes:
+      - ./server_data:/app/data
+    restart: always
+
+  agent:
+    build: .
+    command: ['npm', 'run', 'start:agent', '--', '${TASK_FLAG:-}']
+    depends_on:
+      - server
+    environment:
+      - SERVER_URL=http://server:3000
+      - AGENT_ID=docker-worker-1
+      - AGENT_DB_PATH=./data/agent.db
+    volumes:
+      - ./agent_data_1:/app/data
+    restart: always

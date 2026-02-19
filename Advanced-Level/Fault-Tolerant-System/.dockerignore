@@ -1,0 +1,6 @@
+node_modules
+dist
+data
+.env
+agent_data_*/
+server_data/
